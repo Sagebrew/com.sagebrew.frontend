@@ -1,3 +1,58 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<nav class="light-blue lighten-1" role="navigation">
+  <div class="nav-wrapper container">{{#link-to 'index' id="logo-container" class="brand-logo"}}Matt's Testing{{/link-to}}
+    <ul class="right hide-on-med-and-down">
+      <li>{{#link-to 'users'}}Users{{/link-to}}</li>
+    </ul>
 
-{{outlet}}
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#">Navbar Link</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <p>NO ROUTE</p>
+      {{outlet}}
+    </div>
+  </div>
+</div>
+<footer class="page-footer orange">
+   <div class="container">
+     <div class="row">
+       <div class="col l6 s12">
+         <h5 class="white-text">Datas</h5>
+         <p class="grey-text text-lighten-4">Datas</p>
+       </div>
+       <div class="col l3 s12">
+         <h5 class="white-text">Settings</h5>
+         <ul>
+           <li><a class="white-text" href="#!">Link 1</a></li>
+           <li><a class="white-text" href="#!">Link 2</a></li>
+           <li><a class="white-text" href="#!">Link 3</a></li>
+           <li><a class="white-text" href="#!">Link 4</a></li>
+         </ul>
+       </div>
+       <div class="col l3 s12">
+         <h5 class="white-text">Connect</h5>
+         <ul>
+           <li><a class="white-text" href="#!">Link 1</a></li>
+           <li><a class="white-text" href="#!">Link 2</a></li>
+           <li><a class="white-text" href="#!">Link 3</a></li>
+           <li><a class="white-text" href="#!">Link 4</a></li>
+         </ul>
+       </div>
+     </div>
+   </div>
+   <div class="footer-copyright">
+     <div class="container">
+     Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+     </div>
+   </div>
+ </footer>
+
+
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}
