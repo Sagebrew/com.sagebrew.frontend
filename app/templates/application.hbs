@@ -1,6 +1,7 @@
 <nav class="light-blue lighten-1" role="navigation">
   <div class="nav-wrapper container">{{#link-to 'index' id="logo-container" class="brand-logo"}}Matt's Testing{{/link-to}}
     <ul class="right hide-on-med-and-down">
+      <li>{{#link-to 'index'}}Home{{/link-to}}</li>
       <li>{{#link-to 'users'}}Users{{/link-to}}</li>
     </ul>
 
@@ -14,7 +15,6 @@
 <div class="container">
   <div class="row">
     <div class="col s12">
-      <p>NO ROUTE</p>
       {{outlet}}
     </div>
   </div>
