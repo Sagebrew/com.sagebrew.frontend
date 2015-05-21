@@ -1,1 +1,18 @@
-{{outlet}}
+<div id="user-page">
+  <div id="user-top-bar">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col s4 offset-s4">
+        <div class="user-content">
+          {{outlet}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="user-footer">
+  {{#link-to 'base.index'}}Home{{/link-to}}
+</div>

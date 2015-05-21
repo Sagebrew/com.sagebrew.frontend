@@ -1,0 +1,41 @@
+html,
+body,
+.ember-view {
+  height:100%;
+  width:100%;
+}
+
+#user-page {
+  height:100%;
+  width:100%;
+  background:#000;
+
+}
+
+#user-top-bar {
+  height:10px;
+  width:100%;
+  background:#222;
+  margin-bottom:200px;
+}
+.user-content h2 {
+  color:#fff;
+}
+.login-form {
+  background: #fff;
+  padding:20px;
+}
+
+
+#user-footer {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#bebebe;
+  padding:10px;
+  font-size:85%;
+  a {
+    color:#222;
+  }
+}
