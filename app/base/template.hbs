@@ -1,13 +1,11 @@
 <nav class="light-blue lighten-1" role="navigation">
-  <div class="nav-wrapper container">{{#link-to 'index' id="logo-container" class="brand-logo"}}Matt's Testing{{/link-to}}
+  <div class="nav-wrapper container">
+    <div id="logo-container">{{#link-to 'index'  class="brand-logo"}}Matt's Testing{{/link-to}}</div>
     <ul class="right hide-on-med-and-down">
       <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
       <li>{{#link-to 'users.login'}}Login{{/link-to}}</li>
-
     </ul>
-
-
-    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
   </div>
 </nav>
 

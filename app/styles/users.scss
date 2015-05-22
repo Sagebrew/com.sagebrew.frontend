@@ -1,15 +1,9 @@
-html,
-body,
-.ember-view {
-  height:100%;
-  width:100%;
-}
 
 #user-page {
   height:100%;
   width:100%;
-  background:#000;
-
+  background:url("user-bg.jpeg") bottom right;
+  background-size:cover;
 }
 
 #user-top-bar {
@@ -20,10 +14,13 @@ body,
 }
 .user-content h2 {
   color:#fff;
+  font-weight:300;
+
 }
 .login-form {
   background: #fff;
   padding:20px;
+  box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
 }
 
 
@@ -32,10 +29,10 @@ body,
   bottom:0;
   left:0;
   right:0;
-  background:#bebebe;
+  background:#222;
   padding:10px;
   font-size:85%;
   a {
-    color:#222;
+    color:#585858;
   }
 }
