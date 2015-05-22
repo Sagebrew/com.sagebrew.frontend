@@ -6,13 +6,17 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('base', {path: '/'}, function(){
 
+  this.route('base', {path: '/'}, function(){
+    this.route("index", { path: '', resetNamespace: true });
   });
-  this.route('users', function() {
+
+  this.route('users', {path: '/users'}, function() {
     this.route('login');
     this.route('logout');
   });
+
+
 });
 
 export default Router;
