@@ -19,7 +19,23 @@ module.exports = function(environment) {
     },
     sassOptions: {
       includePaths: ['bower_components/materialize/sass']
-    }
+    },
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      crossOriginWhitelist: ['https://sagebrew.local.dev']
+    },
+    'simple-auth-oauth2': {
+      'serverTokenEndpoint': 'https://sagebrew.local.dev/o/authorize/'
+    },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' https://sagebrew.local.dev",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline'",
+      'media-src': "'self'"
+      }
   };
 
   if (environment === 'development') {

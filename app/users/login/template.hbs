@@ -1,13 +1,15 @@
 <h2>Login</h2>
 <div class="login-form">
-  <div class="input-field">
-    <label for="email" contenteditable="">Email</label>
-    {{input  id="email" type="text" class="validate" }}
-  </div>
+  <form {{action 'authenticate' on='submit'}}>
+    <div class="input-field">
+      <label for="identification" contenteditable="">Email</label>
+      {{input  id="identification" type="text" class="validate" }}
+    </div>
 
-  <div class="input-field">
-    <label for="password">Password</label>
-    {{input id="password" type="password" class="validate" }}
-  </div>
-  <a class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>Login</a>
+    <div class="input-field">
+      <label for="password">Password</label>
+      {{input id="password" type="password" class="validate" }}
+    </div>
+    <button type="submit" class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>Login</button>
+  </form>
 </div>
