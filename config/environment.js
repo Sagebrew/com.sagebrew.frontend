@@ -25,7 +25,7 @@ module.exports = function(environment) {
       crossOriginWhitelist: ['https://sagebrew.local.dev']
     },
     'simple-auth-oauth2': {
-      'serverTokenEndpoint': 'https://sagebrew.local.dev/o/authorize/'
+      'serverTokenEndpoint': 'https://sagebrew.local.dev/o/token/'
     },
     contentSecurityPolicy: {
       'default-src': "'none'",

@@ -3,12 +3,12 @@
   <form {{action 'authenticate' on='submit'}}>
     <div class="input-field">
       <label for="identification" contenteditable="">Email</label>
-      {{input  id="identification" type="text" class="validate" }}
+      {{input  value=identification id="identification" type="text" class="validate" }}
     </div>
 
     <div class="input-field">
       <label for="password">Password</label>
-      {{input id="password" type="password" class="validate" }}
+      {{input value=password id="password" type="password" class="validate" }}
     </div>
     <button type="submit" class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>Login</button>
   </form>
