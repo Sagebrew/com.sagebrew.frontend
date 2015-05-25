@@ -9,12 +9,15 @@ Router.map(function() {
   this.route('base', {path: '/'}, function(){
     this.route("index", { path: '', resetNamespace: true });
     this.route("posts", { resetNamespace: true });
+    this.route('solutions', { resetNamespace: true });
+    this.route('questions', { resetNamespace: true });
   });
 
   this.route('users', {path: '/users'}, function() {
     this.route('login');
     this.route('logout');
   });
+
 
 });
 
