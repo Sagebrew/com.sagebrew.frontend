@@ -6,15 +6,15 @@
   	</div>
   {{/if}}
   <form {{action 'authenticate' on='submit'}}>
-    <div class="input-field">
+    <div class="form-group">
       <label for="identification" contenteditable="">Email</label>
-      {{input  value=identification id="identification" type="text" class="validate" }}
+      {{input  value=identification id="identification" type="text" class="form-control validate" }}
     </div>
 
-    <div class="input-field">
+    <div class="form-group">
       <label for="password">Password</label>
-      {{input value=password id="password" type="password" class="validate" }}
+      {{input value=password id="password" type="password" class="form-control validate" }}
     </div>
-    <button type="submit" class="waves-effect waves-light btn"><i class="mdi-file-cloud left"></i>Login</button>
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
   </form>
 </div>

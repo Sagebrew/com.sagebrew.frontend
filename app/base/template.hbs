@@ -1,55 +1,61 @@
-<nav class="light-blue lighten-1" role="navigation">
-  <div class="nav-wrapper container">
-    <div id="logo-container">{{#link-to 'index'  class="brand-logo"}}Matt's Testing{{/link-to}}</div>
-    <ul class="right hide-on-med-and-down">
-      <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-      <li>{{#link-to 'questions'}}Questions{{/link-to}}</li>
-      <li>{{#link-to 'users.login'}}Login{{/link-to}}</li>
-    </ul>
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'index'  class="navbar-brand"}}Sagebrew Ember{{/link-to}}
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+        <li>{{#link-to 'questions'}}Questions{{/link-to}}</li>
+        <li>{{#link-to 'users.login'}}Login{{/link-to}}</li>
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
 </nav>
 
+
 <div class="container">
   <div class="row">
-    <div class="col s12">
+    <div class="col-sm-12">
       {{outlet}}
     </div>
   </div>
 </div>
-<footer class="page-footer orange">
-   <div class="container">
-     <div class="row">
-       <div class="col l6 s12">
-         <h5 class="white-text">Datas</h5>
-         <p class="grey-text text-lighten-4">Datas</p>
-       </div>
-       <div class="col l3 s12">
-         <h5 class="white-text">Settings</h5>
-         <ul>
-           <li><a class="white-text" href="#!">Link 1</a></li>
-           <li><a class="white-text" href="#!">Link 2</a></li>
-           <li><a class="white-text" href="#!">Link 3</a></li>
-           <li><a class="white-text" href="#!">Link 4</a></li>
-         </ul>
-       </div>
-       <div class="col l3 s12">
-         <h5 class="white-text">Connect</h5>
-         <ul>
-           <li><a class="white-text" href="#!">Link 1</a></li>
-           <li><a class="white-text" href="#!">Link 2</a></li>
-           <li><a class="white-text" href="#!">Link 3</a></li>
-           <li><a class="white-text" href="#!">Link 4</a></li>
-         </ul>
-       </div>
-     </div>
-   </div>
-   <div class="footer-copyright">
-     <div class="container">
-       {{#if session.isAuthenticated}}
-        You're a REAL user!
-       {{else}}
-         BAF
-       {{/if}}
-     </div>
-   </div>
- </footer>
+<footer>
+  <div class="footer-grid-wrapper">
+    <div class="container"><div class="row">
+      <div class="col-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu ligula dictum, pellentesque leo quis, fringilla elit. Sed vel diam et velit volutpat blandit nec nec orci.
+        </div>
+      <div class="col-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu ligula dictum, pellentesque leo quis, fringilla elit. Sed vel diam et velit volutpat blandit nec nec orci.
+        </div>
+      <div class="col-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu ligula dictum, pellentesque leo quis, fringilla elit. Sed vel diam et velit volutpat blandit nec nec orci.
+        </div>
+      <div class="col-md-3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu ligula dictum, pellentesque leo quis, fringilla elit. Sed vel diam et velit volutpat blandit nec nec orci.
+        </div>
+    </div></div>
+  </div>
+  <div class="footer-bar-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          {{#if session.isAuthenticated}}
+           You're a REAL user!
+          {{else}}
+            BAF
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

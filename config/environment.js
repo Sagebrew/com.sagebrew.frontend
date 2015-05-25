@@ -17,9 +17,11 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    /*
     sassOptions: {
       includePaths: ['bower_components/materialize/sass']
     },
+    */
     'simple-auth': {
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
       crossOriginWhitelist: ['https://sagebrew.local.dev']
