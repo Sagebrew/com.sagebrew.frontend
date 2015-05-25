@@ -1,0 +1,5 @@
+{{outlet}}
+{{#each item in model}}
+  <h2>{{#link-to 'questions.view' item.id }}{{item.title}}{{/link-to}}</h2>
+  <p>{{item.content}}</p>
+{{/each}}
