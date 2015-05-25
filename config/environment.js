@@ -62,5 +62,17 @@ module.exports = function(environment) {
 
   }
 
+
+  if (environment === 'development') {
+    ENV.APP.API_HOST = 'https://sagebrew.local.dev';
+    ENV.APP.API_NAMESPACE = 'v1';
+
+  }
+
+  if (environment === 'production') {
+    ENV.APP.API_HOST = 'https://sagebrew.local.dev';
+    ENV.APP.API_NAMESPACE = 'v1';
+  }
+
   return ENV;
 };

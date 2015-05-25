@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   model: function() {
@@ -8,14 +9,20 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
      'password': '***',
    };
  },
-  actions : {
+
+ actions : {
+    sessionAuthenticationFailed: function(message) {
+      this.set('errorMessage', message);
+    },
+    sessionAuthenticationSucceeded: function() {
+      this.set('errorMessage', '');
+      this.set('identification', '');
+      this.set('password', '');
+      this._super();
+    },
     authenticate: function() {
-      console.log(this.controller.get('password'));
-      console.log("SUP");
       var data = this.controller.getProperties('identification', 'password');
-      data.client_id = 'jo7YyhF2apgPtJHJaVNFAysRRVJWry';
-      console.log(data);
-      return this.get('session').authenticate('simple-auth-authenticator:oauth2-password-grant', data);
+      return this.get('session').authenticate('authenticator:custom', data);
     }
   }
 });
