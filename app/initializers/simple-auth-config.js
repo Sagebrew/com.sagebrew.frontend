@@ -1,6 +1,4 @@
 import OAuth2 from 'simple-auth-oauth2/authenticators/oauth2';
-import Session from 'simple-auth/session';
-import Ember from 'ember';
 
 
 // var CustomSession = Session.extend({
@@ -26,7 +24,7 @@ var CustomAuthenticator = OAuth2.extend({
     data.client_secret = 'defg';
 
 		return this._super(url, data);
-	},
+	}
 
 	// authenticate: function(credentials) {
 	// 	console.log('Username: ' + credentials.identification);
@@ -67,7 +65,7 @@ export default {
 		window.ENV['simple-auth-oauth2'] = {
 			serverTokenEndpoint: "https://sagebrew.local.dev/o/token/",
 			serverTokenRevokationEndpoint: "https://sagebrew.local.dev/o/token/",
-			refreshAccessTokens: true,
+			refreshAccessTokens: true
 		};
 		container.register('authenticator:custom', CustomAuthenticator);
         // container.register('session:custom', CustomSession);

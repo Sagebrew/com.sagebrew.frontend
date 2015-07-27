@@ -6,14 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('base', {path: '/'}, function(){
-    this.route("index", { path: '', resetNamespace: true });
-    this.route('solutions', { resetNamespace: true });
-    this.route('questions', { resetNamespace: true }, function() {
-      this.route('view', { path: '/question/:question_id' });
-      this.route('create');
-    });
-  });
+  'use strict';
+  this.route('solutions');
+  this.route('questions');
 
   this.route('users', {path: '/users'}, function() {
     this.route('login');
