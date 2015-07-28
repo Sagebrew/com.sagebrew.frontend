@@ -17,6 +17,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.set('errorMessage', '');
       this.set('identification', '');
       this.set('password', '');
+      this.transitionTo('index');
       this._super();
     },
     authenticate: function() {

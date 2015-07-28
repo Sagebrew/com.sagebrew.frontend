@@ -14,9 +14,7 @@
     "qunit": "~1.17.1",
     "bootstrap-sass": "~3.3.5",
     "font-awesome": "~4.3.0",
-    "ember-cli-moment-shim": "~0.2.0",
-    "ember-simple-auth": "0.8.0",
-    "moment": "~2.10.3"
+    "ember-simple-auth": "0.8.0"
   },
   "resolutions": {
     "jquery": ">= 1.7.0 < 2.2.0"
