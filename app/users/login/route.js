@@ -1,12 +1,11 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
-import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   model: function() {
    return {
      'identification': 'asdfasdfa',
-     'password': '***',
+     'password': '***'
    };
  },
 

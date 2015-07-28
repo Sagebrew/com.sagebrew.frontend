@@ -1,7 +1,7 @@
 <div>
 {{#link-to 'questions.create' class='btn btn-primary'}}Create New Question{{/link-to}}
 </div>
-{{#each item in model}}
+{{#each model as |item| }}
   <h2>{{#link-to 'questions.view' item.id }}{{item.title}}{{/link-to}}</h2>
   <p>{{item.content}}</p>
 {{/each}}

@@ -46,6 +46,8 @@ module.exports = function(environment) {
      ENV.APP.LOG_TRANSITIONS = true;
      ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
      //ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.API_HOST = 'https://sagebrew.local.dev';
+    ENV.APP.API_NAMESPACE = 'v1';
   }
 
   if (environment === 'test') {
@@ -60,19 +62,13 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
-  }
-
-
-  if (environment === 'development') {
-    ENV.APP.API_HOST = 'https://sagebrew.local.dev';
+  if (environment === 'staging') {
+    ENV.APP.API_HOST = 'https://staging.sagebrew.com';
     ENV.APP.API_NAMESPACE = 'v1';
-
   }
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'https://sagebrew.local.dev';
+    ENV.APP.API_HOST = 'https://www.sagebrew.com';
     ENV.APP.API_NAMESPACE = 'v1';
   }
 
