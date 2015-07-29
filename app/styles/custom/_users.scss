@@ -1,3 +1,47 @@
+/**
+ * General Layout Stuff
+ */
+body.users {
+  margin:0;
+}
+body.users .navbar {
+  margin-bottom:0;
+}
+/**
+ * Anon user homepage
+ */
+.anon-hero-action-wrapper {
+  background:url("user-bg.jpeg") bottom right;
+  background-size:cover;
+  padding:200px 0;
+  border-bottom:6px solid #222;
+}
+
+.register-form-wrapper {
+   background: #fff;
+   padding:20px;
+   box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+   max-width:420px;
+   margin: 0px auto;
+   h3 {
+     text-align: center;
+   }
+   h5 {
+     text-align: center;
+   }
+ }
+
+ .anon-info-row {
+   padding:80px;
+   background:#f1f1f1;
+   font-size:100%;
+ }
+
+
+
+/**
+ * Stuff to do with individual actions
+ */
 #user-page {
   height:100%;
   width:100%;
