@@ -15,9 +15,9 @@
         <li>{{#link-to 'index'}}Home{{/link-to}}</li>
         <li>{{#link-to 'questions'}}Questions{{/link-to}}</li>
         {{#if session.isAuthenticated}}
-        <li>{{#link-to 'users.logout'}}Logout{{/link-to}}</li>
+        <li>{{#link-to 'users.account.logout'}}Logout{{/link-to}}</li>
         {{else}}
-          <li>{{#link-to 'users.login'}}Login{{/link-to}}</li>
+          <li>{{#link-to 'users'}}Login{{/link-to}}</li>
         {{/if}}
       </ul>
     </div><!--/.nav-collapse -->

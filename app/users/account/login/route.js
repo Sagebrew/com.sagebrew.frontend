@@ -2,21 +2,12 @@ import Ember from 'ember';
 import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
-  model: function() {
-   return {
-     'identification': 'asdfasdfa',
-     'password': '***'
-   };
- },
-
  actions : {
     sessionAuthenticationFailed: function(message) {
-      this.set('errorMessage', message);
+      this.controller.set('errorMessage', message.error_description);
     },
     sessionAuthenticationSucceeded: function() {
-      this.set('errorMessage', '');
-      this.set('identification', '');
-      this.set('password', '');
+      this.controller.setProperties({errorMessage : '', identification : '', password : ''});
       this.transitionTo('index');
       this._super();
     },
