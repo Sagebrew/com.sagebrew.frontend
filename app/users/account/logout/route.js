@@ -6,5 +6,11 @@ export default Ember.Route.extend({
     if (!session.isAuthenticated) {
       this.transitionTo('users');
     }
-  }
+  },
+  actions : {
+  logout: function() {
+    this.get('session').invalidate('authenticator:custom');
+    this.transitionTo('users');
+   },
+ }
 });

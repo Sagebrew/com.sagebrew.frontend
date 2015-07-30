@@ -1,0 +1,17 @@
+<h2>Forgot Password</h2>
+<div class="login-form">
+  {{#if errorMessage}}
+  	<div class="alert alert-danger">
+  	  <strong>Login failed:</strong> {{errorMessage}}
+  	</div>
+  {{/if}}
+  <form {{action 'forgot' on='submit'}}>
+    <div class="form-group">
+      <label for="identification">Email</label>
+      {{input  value=identification id="identification" type="text" class="form-control validate" }}
+      <p class="help-block">Dev note: To find your sb username look at the url of your profile.</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+  </form>
+</div>
