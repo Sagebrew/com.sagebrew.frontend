@@ -7,7 +7,15 @@ export default Ember.Route.extend({
       this.transitionTo('users');
     }
   },
+  getNews() {
+    return Ember.$.ajax({
+      url:  'https://sagebrew.local.dev/v1/me/newsfeed/',
+      type: 'GET'
+    });
+  },
   model () {
-    return this.store.find("user", "matt_wisner");
+    return Em.RSVP.hash({
+      news:     this.getNews()
+    });
   }
 });
