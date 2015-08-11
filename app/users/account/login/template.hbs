@@ -15,7 +15,7 @@
     <div class="form-group">
       <label for="password">Password</label>
       {{input value=password id="password" type="password" class="form-control validate" }}
-      <p class="help-block">Dev note: Currently the flash messages don't actually work =(.</p>
+      <p class="help-block">{{#link-to 'users.account.forgot'}}Forgot Password?{{/link-to}}</p>
 
     </div>
     <button type="submit" class="btn btn-primary btn-block">Login</button>
