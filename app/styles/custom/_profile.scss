@@ -1,0 +1,27 @@
+.profile-highlight {
+  height:240px;
+  background:#EFEFEF;
+  position: relative;
+  .profile-pic-wrapper {
+    position: absolute;
+    bottom:20px;
+    left:20px;
+    height:120px;
+    width:120px;
+    border:2px solid #fff;
+    background:#e2e2e2;
+  }
+  .profile-full-name {
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    margin:0;
+    font-size:32px;
+    border-radius:2px;
+  }
+}
+
+.profile-nav {
+    background:#EFEFEF;
+    margin:20px 0;
+}

@@ -20,6 +20,7 @@ module.exports = function(environment) {
     'simple-auth': {
       authenticationRoute: 'users.login',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      session: 'session:custom',
       crossOriginWhitelist: ['https://sagebrew.local.dev']
     },
     'simple-auth-oauth2': {
