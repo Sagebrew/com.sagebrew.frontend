@@ -13,6 +13,9 @@ Router.map(function() {
       this.route('view', { path: '/question/:question_id' });
       this.route('create');
     });
+    this.route('profiles',  { resetNamespace: true }, function() {
+      this.route('view', { path: '/profile/:username' });
+    });
   });
 
   this.route('users', {path: '/users'}, function() {
@@ -22,6 +25,7 @@ Router.map(function() {
       this.route('forgot');
     });
   });
+
 });
 
 export default Router;

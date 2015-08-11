@@ -31,7 +31,7 @@
         {{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>{{#link-to 'index'}}{{currentUser.first_name}}{{/link-to}}</li>
+        <li>{{#link-to 'profiles.view' currentUser.username }}{{currentUser.first_name}}{{/link-to}}</li>
         <li>{{#link-to 'index'}}<i class="fa fa-user"></i>{{/link-to}}</li>
       </ul>
       <form class="navbar-form navbar-right search-form" role="search">
