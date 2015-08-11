@@ -1,2 +1,27 @@
-<h1>{{ model.title }}</h1>
-<p> {{ model.content }} </p>
+<div class="question-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ model.title }}</h1>
+        <p>{{ model.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="solutions-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Solutions</h2>
+        {{#each model.solutions as |solution| }}
+          <div class="row question-solution">
+            <div class="col-md-12">
+            <p>{{solution.content}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

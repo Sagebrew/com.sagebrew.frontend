@@ -1,7 +1,26 @@
-<div>
-{{#link-to 'questions.create' class='btn btn-primary'}}Create New Question{{/link-to}}
+<div class="row">
+  <div class="col-md-9">
+    {{#each model as |item| }}
+      <h2>{{#link-to 'questions.view' item.id }}{{item.title}}{{/link-to}}</h2>
+      <p>{{item.content}}</p>
+    {{/each}}
+  </div>
+  <div class="col-md-3">
+    <div class="create-new-converstaion well">
+      <h5>
+        Join the conversation!
+      </h5>
+      <div class="clearfix actions">
+        {{#link-to 'questions.create' class='btn btn-primary pull-right'}}Create New Question{{/link-to}}
+      </div>
+    </div>
+    <div class="well">
+      <h5>Things to Keep in Mind</h5>
+        <ul>
+          <li>Be Respectful</li>
+          <li>Consider All Sides</li>
+          <li>Link to Supporting Info</li>
+        </ul>
+    </div>
+  </div>
 </div>
-{{#each model as |item| }}
-  <h2>{{#link-to 'questions.view' item.id }}{{item.title}}{{/link-to}}</h2>
-  <p>{{item.content}}</p>
-{{/each}}
