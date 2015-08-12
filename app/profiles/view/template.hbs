@@ -1,20 +1,24 @@
 <!-- Profile Highlight -->
 <div class="row">
-  <div class="col-md-12 profile-highlight" style="background-image:url('{{model.wallpaper_pic}}');">
-    <div class="profile-pic-wrapper">
+  <div class="col-md-12">
+    <div class="profile-highlight"  style="background-image:url('{{model.wallpaper_pic}}');">
+      <div class="profile-pic-wrapper">
+      </div>
+      <h5 class="profile-full-name">{{model.profile.full_name}} ({{model.profile.reputation}})</h5>
     </div>
-    <h5 class="profile-full-name">{{model.full_name}} ({{model.reputation}})</h5>
   </div>
 </div>
 
 <!-- Profile Nav -->
 <div class="row">
-  <div class="col-md-12 profile-nav">
-    <ul class="nav nav-pills pull-right">
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Profile</a></li>
-    </ul>
+  <div class="col-md-12">
+    <div class="clearfix profile-nav">
+      <ul class="nav nav-pills pull-right">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -24,7 +28,23 @@
     <h4>Mah People</h4>
   </div>
   <div class="col-md-9">
-    <h4>Sparks!</h4>
+    <div class="post-create-wrapper">
+      <h6>Create a Spark</h6>
+      <form {{action 'createPost' on='submit'}}>
+        <div class="form-group">
+          {{textarea value="" id="content" type="text" class="form-control validate" }}
+        </div>
+        <div class="clearfix">
+          <button type="submit" class="btn btn-primary pull-right">Create Spark</button>
+        </div>
+      </form>
+    </div>
+    {{#each model.posts as |post|}}
+    <div class="post-profile-wrapper">
+        <h5>{{post.content}}</h5>
+    </div>
+    {{/each}}
+
   </div>
 </div>
 {{outlet}}
