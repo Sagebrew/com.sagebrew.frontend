@@ -1,6 +1,6 @@
 import DS from 'ember-data';
-
-export default DS.Model.extend({
+import voteableModel from '../sagebrew/voteableModel';
+export default voteableModel.extend({
   title: DS.attr(),
   created: DS.attr('date'),
   content: DS.attr(),
