@@ -17,7 +17,7 @@
         {{#each question.solutions as |solution| }}
           <div class="row question-solution">
             <div class="col-md-12">
-            <p>{{solution.content}}</p>
+              {{solutions/solution-summary solution=solution}}
             </div>
           </div>
         {{/each}}
