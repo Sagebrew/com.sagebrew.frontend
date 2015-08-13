@@ -4,16 +4,13 @@ body {
 }
 
 .search-form {
-
   .form-group {
     position: relative;
   }
-
   .form-group input {
     width:100%;
     padding-right: 30px;
   }
-
   .form-group button {
     position: absolute;
     right: 0;
@@ -22,5 +19,27 @@ body {
     border: 0;
     padding: 7px 10px 7px 5px;
   }
+}
 
+//
+// Voting
+.vote-wrapper {
+  display:inline-block;
+  width:40px;
+  text-align: center;
+  font-size:120%;
+  .vote-up {
+    display:block;
+  }
+  .vote-down {
+    display:block;
+  }
+  .vote-count {
+    display:block;
+  }
+}
+.voatable-content {
+  display:inline-block;
+  vertical-align: top;
+  padding:10px;
 }

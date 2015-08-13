@@ -28,21 +28,10 @@
     <h4>Mah People</h4>
   </div>
   <div class="col-md-9">
-    <div class="post-create-wrapper">
-      <h6>Create a Spark</h6>
-      <form {{action 'createPost' on='submit'}}>
-        <div class="form-group">
-          {{textarea value="" id="content" type="text" class="form-control validate" }}
-        </div>
-        <div class="clearfix">
-          <button type="submit" class="btn btn-primary pull-right">Create Spark</button>
-        </div>
-      </form>
-    </div>
+    {{posts/post-create}}
+
     {{#each model.posts as |post|}}
-    <div class="post-profile-wrapper">
-        <h5>{{post.content}}</h5>
-    </div>
+      {{posts/post-summary post=post}}
     {{/each}}
 
   </div>
