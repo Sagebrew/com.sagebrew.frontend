@@ -30,10 +30,21 @@ body {
   font-size:120%;
   .vote-up {
     display:block;
+    color:#ccc;
+    cursor: pointer;
+    &.active {
+      color:#222;
+    }
   }
   .vote-down {
     display:block;
+    color:#ccc;
+    cursor: pointer;
+    &.active {
+      color:#222;
+    }
   }
+
   .vote-count {
     display:block;
   }
