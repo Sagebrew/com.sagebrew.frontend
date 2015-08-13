@@ -17,7 +17,13 @@ export default Ember.Component.extend({
       });
     },
     downvote() {
-      console.log("downvote");
-    }
+      var url = config.APP.API_HOST + "/" + config.APP.API_NAMESPACE;
+      return Ember.$.ajax({
+        url:  url + "/" + "posts/" + this.get('post').id + "/votes/?expedite=true",
+        type: 'POST',
+        data:  JSON.stringify({
+                'vote_type': false
+            }),
+      });    }
   }
 });

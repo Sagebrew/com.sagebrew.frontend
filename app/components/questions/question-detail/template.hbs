@@ -1,0 +1,27 @@
+<div class="question-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{ question.title }}</h1>
+        <p>{{ question.content }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="solutions-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Solutions</h2>
+        {{#each question.solutions as |solution| }}
+          <div class="row question-solution">
+            <div class="col-md-12">
+            <p>{{solution.content}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

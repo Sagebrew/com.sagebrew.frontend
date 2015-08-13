@@ -1,8 +1,7 @@
 <div class="row">
   <div class="col-md-9">
-    {{#each model as |item| }}
-      <h2>{{#link-to 'questions.view' item.id }}{{item.title}}{{/link-to}}</h2>
-      <p>{{item.content}}</p>
+    {{#each model as |question| }}
+      {{questions/question-summary question=question}}
     {{/each}}
   </div>
   <div class="col-md-3">
