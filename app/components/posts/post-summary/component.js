@@ -2,28 +2,41 @@ import Ember from 'ember';
 import config from '../../../config/environment';
 
 export default Ember.Component.extend({
-  isUrgent : Ember.computed(function() {
-    return "active";
+  isVotedUp : Ember.computed(function() {
+    if (this.get('post').get('vote_type') === true) {
+      return "active";
+    } else {
+      return "";
+    }
+  }),
+  isVotedDown : Ember.computed(function() {
+    if (this.get('post').get('vote_type') === false) {
+      return "active";
+    } else {
+      return "";
+    }
   }),
   actions : {
     upvote() {
       var url = config.APP.API_HOST + "/" + config.APP.API_NAMESPACE;
-      return Ember.$.ajax({
+      Ember.$.ajax({
         url:  url + "/" + "posts/" + this.get('post').id + "/votes/?expedite=true",
         type: 'POST',
-        data:  JSON.stringify({
+        data:  {
                 'vote_type': true
-            }),
+              },
       });
     },
     downvote() {
       var url = config.APP.API_HOST + "/" + config.APP.API_NAMESPACE;
-      return Ember.$.ajax({
+      Ember.$.ajax({
         url:  url + "/" + "posts/" + this.get('post').id + "/votes/?expedite=true",
         type: 'POST',
-        data:  JSON.stringify({
+        data:  {
                 'vote_type': false
-            }),
-      });    }
+              },
+      });
+
+    }
   }
 });
