@@ -14,7 +14,7 @@ export default Ember.Route.extend({
     });
   },
   model () {
-    return Em.RSVP.hash({
+    return Ember.RSVP.hash({
       news:     this.getNews()
     });
   }
