@@ -10,7 +10,7 @@ export default Ember.Component.extend({
  },
 
  actions : {
-    save: function() {
+    save() {
       var data = this.controller.getProperties('title', 'content', 'tags');
       var question = this.store.createRecord('question', {
         title: data.title,
@@ -20,6 +20,5 @@ export default Ember.Component.extend({
       question.save();
 
     }
-
   }
 });
