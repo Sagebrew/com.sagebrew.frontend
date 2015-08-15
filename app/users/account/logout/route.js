@@ -11,6 +11,6 @@ export default Ember.Route.extend({
   logout: function() {
     this.get('session').invalidate('authenticator:custom');
     this.transitionTo('users');
-   },
+   }
  }
 });
