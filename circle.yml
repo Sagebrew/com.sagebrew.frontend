@@ -25,7 +25,7 @@ test:
     - docker build -t sagebrew/sb_app:$CIRCLE_SHA1 ~/com.sagebrew.frontend/deployment/
     - docker build -t sagebrew/mass_sys:$CIRCLE_SHA1 ~/com.sagebrew.frontend/dockerfiles/
     - docker run --name redis-container -d redis
-    - docker run --name ember_app --link redis-container:redis -e APP_NAME=emberapp -d -t sagebrew/sb_app:$CIRCLE_SHA
+    - docker run --name ember_app --link redis-container:redis -e APP_NAME=emberapp -d -t sagebrew/sb_app:$CIRCLE_SHA1
 
 deployment:
   production:
