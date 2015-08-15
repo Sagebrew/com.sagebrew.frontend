@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Authentication": {
+    "Bucket": "massive-dangerzone-staging",
+    "Key": "docker_config/dockercfg"
+  },
+  "Image": {
+    "Name": "sagebrew/mass_sys:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    },
+    {
+     "ContainerPort": "443"
+    }
+  ]
+}

@@ -1,7 +1,6 @@
 from os import environ, path
 
 
-
 def populate_config():
     project_dir = path.dirname(path.dirname(path.realpath(__file__)))
     cur_branch = environ.get("CIRCLE_BRANCH", "")
@@ -19,9 +18,6 @@ def populate_config():
                                 cur_branch), "w")
     f.write(data)
     f.close()
-
-if __name__ == "__main__":
-    populate_config()
 
 
 def populate_staging_values(data):
@@ -50,3 +46,6 @@ def populate_production_values(data):
     data = data.replace("<REDIS_HOST>", environ.get("REDIS_PROD", ""))
     data = data.replace("<REDIS_PORT>", environ.get("REDIS_PORT_PROD", ""))
     return data
+
+if __name__ == "__main__":
+    populate_config()
