@@ -65,7 +65,7 @@ def create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
                                        template_name='sys-util-conf')
     sys_env = sys_env["CreateEnvironmentResponse"]["CreateEnvironmentResult"]
     while sys_env[u"Status"] != u"Ready":
-        sleep(30)
+        sleep(35)
         sys_env = stalk.describe_environments(application_name=sys_util,
                                               environment_names=[sys_util,])
         sys_env_app = sys_env["DescribeEnvironmentsResponse"][
