@@ -50,7 +50,7 @@ def create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
         "DOCKER_CONFIG_BUCKET", ""), sha_key, branch_key, sys_util_name)
     aws_env = "/home/ubuntu/%s/%s-%s_%s.json" % ("com.sagebrew.web",
                                                  sha_key, branch_key,
-                                                 "sys_util")
+                                                 "mass-sys")
     option_tuple = populate_options(aws_env)
     stalk.create_application_version(application_name=sys_util,
                                      version_label=sha_key,
