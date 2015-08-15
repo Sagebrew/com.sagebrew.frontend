@@ -1,13 +1,24 @@
+machine:
+  services:
+    - redis
+    - docker
+
 dependencies:
+  pre:
+    - pip install awscli
   override:
     - npm install
   post:
     - bower install
     - npm install testem -g
+    - npm install -g ember-cli
 
 test:
   override:
     - echo 1
+  post:
+    - docker build build -t sagebrew/sb_app:$CIRCLE_SHA .
+    - docker run --name $APP_NAME --env APP_NAME=ember-app --env REDIS_SERVER=localhost sb_app:latest
 
 deployment:
   production:
@@ -18,3 +29,4 @@ deployment:
     branch: staging
     commands:
       - ember deploy --environment staging
+      - bash -x ~/com.sagebrew.frontend/deployment/staging.sh $CIRCLE_SHA1
