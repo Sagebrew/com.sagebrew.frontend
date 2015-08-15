@@ -1,0 +1,19 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Authentication": {
+    "Bucket": "massive-dangerzone-master",
+    "Key": "docker_config/dockercfg"
+  },
+  "Image": {
+    "Name": "sagebrew/sb_app",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "80"
+    },
+    {
+     "ContainerPort": "443"
+    }
+  ]
+}
