@@ -11,3 +11,13 @@ dependencies:
 test:
   override:
     - testem ci
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ember deploy --environment production
+  staging:
+    branch: staging
+    commands:
+      - ember deploy --environment staging
