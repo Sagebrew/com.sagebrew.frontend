@@ -19,8 +19,9 @@ test:
   override:
     - echo 1
   post:
-    - docker build build -t sagebrew/sb_app:$CIRCLE_SHA .
-    - docker run --name $APP_NAME --env APP_NAME=ember-app --env REDIS_SERVER=localhost sb_app:latest
+    - docker build -t sagebrew/sb_app:$CIRCLE_SHA  ~/com.sagebrew.frontend/deployment/
+    - docker run --name redis-container -d redis
+    - docker run --name ember_app --link redis-container:redis -e APP_NAME=emberapp -d -t sagebrew/sb_app:latest
 
 deployment:
   production:
