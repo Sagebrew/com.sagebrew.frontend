@@ -15,5 +15,6 @@
     {
      "ContainerPort": "443"
     }
-  ]
+  ],
+  "Logging": "/home/apps/logs/"
 }
