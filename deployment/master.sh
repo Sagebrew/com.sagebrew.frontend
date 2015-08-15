@@ -11,4 +11,5 @@ aws s3 cp ~/com.sagebrew.fontend/deployment/Dockerrun.aws.json.sys.master s3://$
 aws s3 cp $DOCKERRUN_FILE s3://$EB_BUCKET/docker_config/Dockerrun.aws.json
 
 
+~/virtualenvs/venv-2.7.6/bin/python ~/com.sagebrew.frontend/deployment/populate_options.py
 ~/virtualenvs/venv-2.7.6/bin/python ~/com.sagebrew.frontend/deployment/deployment.py master

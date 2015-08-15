@@ -20,26 +20,26 @@ module.exports = {
   staging: {
     buildEnv: 'staging', // Override the environment passed to the ember asset build. Defaults to 'production'
     store: {
-      host: process.env['REDIS_STAGING'],
-      port: 6379
+      host: process.env['REDIS_HOST'],
+      port: process.env['REDIS_PORT']
     },
     assets: {
-      accessKeyId: process.env['AWS_ACCESS_KEY_STAGING'],
-      secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY_STAGING'],
-      bucket: process.env['BUCKET_STAGING']
+      accessKeyId: process.env['AWS_ACCESS_KEY'],
+      secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
+      bucket: process.env['BUCKET']
     },
     manifestPrefix: 'stage-app' // optional, defaults to this.project.name()
   },
 
    production: {
     store: {
-      host: process.env['REDIS_PROD'],
-      port: 6379
+      host: process.env['REDIS_HOST'],
+      port: process.env['REDIS_PORT']
     },
     assets: {
-      accessKeyId: process.env['AWS_ACCESS_KEY_PROD'],
-      secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY_PROD'],
-      bucket: process.env['BUCKET_PROD']
+      accessKeyId: process.env['AWS_ACCESS_KEY'],
+      secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
+      bucket: process.env['BUCKET']
     }
   }
 };

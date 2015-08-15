@@ -9,6 +9,7 @@ dependencies:
   pre:
     - pip install awscli
     - pip install boto
+    - pip install unipath
   override:
     - npm install
   post:
