@@ -5,7 +5,7 @@
     "Key": "docker_config/dockercfg"
   },
   "Image": {
-    "Name": "sagebrew/mass_sys:latest",
+    "Name": "sagebrew/mass_sys:<TAG>",
     "Update": "true"
   },
   "Ports": [
