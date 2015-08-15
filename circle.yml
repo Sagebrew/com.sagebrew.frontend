@@ -1,0 +1,15 @@
+machine:
+  timezone:
+    Pacific/Auckland
+  node:
+    version: v0.12.7
+
+dependencies:
+  override:
+    - npm install --dev
+  post:
+    - bower install
+
+test:
+  override:
+    - testem ci
