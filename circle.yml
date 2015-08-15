@@ -8,6 +8,7 @@ machine:
 dependencies:
   pre:
     - pip install awscli
+    - pip install boto
   override:
     - npm install
   post:
@@ -20,6 +21,8 @@ test:
     - echo 1
   post:
     - docker build -t sagebrew/sb_app:$CIRCLE_SHA  ~/com.sagebrew.frontend/deployment/
+    - sed "s/<BRANCH>/$CIRCLE_BRANCH/;s/<APP_USER>/$APP_USER/" < ~/com.sagebrew.frontend/dockerfiles/dockerfile.template > ~/com.sagebrew.fontend/dockerfiles/Dockerfile
+    - docker build -t sagebrew/mass_sys:$CIRCLE_SHA1 ~/com.sagebrew.frontend/dockerfiles/
     - docker run --name redis-container -d redis
     - docker run --name ember_app --link redis-container:redis -e APP_NAME=emberapp -d -t sagebrew/sb_app:latest
 
