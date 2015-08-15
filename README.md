@@ -41,7 +41,19 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+For development you can do the following on a mac system:
+
+    export AWS_SECRET_ACCESS_KEY=ask_for_a_secret_key
+    export AWS_ACCESS_KEY=ask_for_a_key
+    
+    brew install redis
+    brew tap homebrew/services
+    brew services start redis
+    
+    ember deploy --environment development
+
+Ensure the exports are executed in the same terminal that you are executing the
+development deployment call in, otherwise the env vars won't be accessible.
 
 ## Further Reading / Useful Links
 
