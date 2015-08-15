@@ -16,7 +16,7 @@ def deployment(stalk, branch_key):
     create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
                         bean_bucket)
     create_app_version_update_env(branch_key, stalk, sha_key, bean_bucket,
-                                  "web", "massive-dangerzone-%s" % branch_key,
+                                  "massive-dangerzone-%s" % branch_key,
                                   "massivedanger-%s" % branch_key)
 
     if environ.get("AUTO_TERMINATE", "false") == "true":
@@ -46,8 +46,8 @@ def terminate_sys_util_env(sys_util, stalk):
 
 def create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
                         bean_bucket):
-    bean_key = "%s/%s-%s_%s.aws.json" % (environ.get(
-        "DOCKER_CONFIG_BUCKET", ""), sha_key, branch_key, sys_util_name)
+    bean_key = "%s/%s-%s_%s.aws.json" % ("docker_config",
+                                         sha_key, branch_key, sys_util_name)
     aws_env = "/home/ubuntu/%s/%s-%s.json" % ("com.sagebrew.frontend",
                                               sha_key, branch_key)
     option_tuple = populate_options(aws_env)
@@ -80,9 +80,8 @@ def create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
 
 
 def create_app_version_update_env(branch_key, stalk, sha_key, bean_bucket,
-                                  app_type, app_name, env_name):
-    bean_key = "%s/%s-%s_%s.zip" % (environ.get(
-        "DOCKER_CONFIG_BUCKET", ""), sha_key, branch_key, app_type)
+                                  app_name, env_name):
+    bean_key = "%s/%s-%s.json" % ("docker_config", sha_key, branch_key)
     aws_env = "/home/ubuntu/%s/%s-%s.json" % ("com.sagebrew.frontend",
                                               sha_key, branch_key)
     option_tuple = populate_options(aws_env)
