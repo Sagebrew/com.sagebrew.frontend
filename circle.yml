@@ -31,9 +31,8 @@ deployment:
   production:
     branch: master
     commands:
-      - ember deploy --environment production
+      - bash -x ~/com.sagebrew.frontend/deployment/master.sh $CIRCLE_SHA1
   staging:
     branch: staging
     commands:
-      - ember deploy --environment staging
       - bash -x ~/com.sagebrew.frontend/deployment/staging.sh $CIRCLE_SHA1
