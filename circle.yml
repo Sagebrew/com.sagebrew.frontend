@@ -2,6 +2,8 @@ machine:
   services:
     - redis
     - docker
+  python:
+    version: python 2.7.6
 
 dependencies:
   pre:
