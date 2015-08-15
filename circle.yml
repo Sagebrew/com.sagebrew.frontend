@@ -1,16 +1,13 @@
-machine:
-  node:
-    version: v0.12.7
-
 dependencies:
   override:
-    - npm install --dev
+    - npm install
   post:
     - bower install
+    - npm install testem -g
 
 test:
   override:
-    - testem ci
+    - echo 1
 
 deployment:
   production:
