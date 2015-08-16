@@ -28,7 +28,7 @@ module.exports = {
       secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
       bucket: process.env['BUCKET']
     },
-    manifestPrefix: 'stage-app' // optional, defaults to this.project.name()
+    manifestPrefix: process.env['APP_NAME'] // optional, defaults to this.project.name()
   },
 
    production: {
@@ -40,6 +40,7 @@ module.exports = {
       accessKeyId: process.env['AWS_ACCESS_KEY'],
       secretAccessKey: process.env['AWS_SECRET_ACCESS_KEY'],
       bucket: process.env['BUCKET']
-    }
+    },
+    manifestPrefix: process.env['APP_NAME']
   }
 };
