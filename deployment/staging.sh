@@ -5,7 +5,6 @@ docker push sagebrew/sb_app:$SHA1
 docker push sagebrew/mass_sys:$SHA1
 EB_BUCKET=massive-dangerzone-$CIRCLE_BRANCH
 DOCKERRUN_FILE=$SHA1-staging.json
-WEB_ZIP=$SHA1-staging.zip
 DOCKERRUN_FILE_SYS=$SHA1-staging_mass-sys.aws.json
 
 sed "s/<TAG>/$SHA1/" < ~/com.sagebrew.frontend/deployment/Dockerrun.aws.sys.staging.json.template > ~/com.sagebrew.frontend/deployment/$DOCKERRUN_FILE_SYS
