@@ -1,30 +1,39 @@
 <!-- Profile Highlight -->
 <div class="row">
-  <div class="col-md-12 profile-highlight" style="background-image:url('{{model.wallpaper_pic}}');">
-    <div class="profile-pic-wrapper">
+  <div class="col-md-12">
+    <div class="profile-highlight"  style="background-image:url('{{model.wallpaper_pic}}');">
+      <div class="profile-pic-wrapper">
+      </div>
+      <h5 class="profile-full-name">{{model.profile.full_name}} ({{model.profile.reputation}})</h5>
     </div>
-    <h5 class="profile-full-name">{{model.full_name}} ({{model.reputation}})</h5>
   </div>
 </div>
 
 <!-- Profile Nav -->
 <div class="row">
-  <div class="col-md-12 profile-nav">
-    <ul class="nav nav-pills pull-right">
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Profile</a></li>
-    </ul>
+  <div class="col-md-12">
+    <div class="clearfix profile-nav">
+      <ul class="nav nav-pills pull-right">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
 <!-- Profile Content -->
 <div class="row">
   <div class="col-md-3">
-    <h4>Mah People</h4>
+    <h3>{{model.president.first_name}} {{model.president.last_name}}</h3>
   </div>
   <div class="col-md-9">
-    <h4>Sparks!</h4>
+    {{posts/post-create}}
+
+    {{#each model.posts as |post|}}
+      {{posts/post-summary post=post}}
+    {{/each}}
+
   </div>
 </div>
 {{outlet}}

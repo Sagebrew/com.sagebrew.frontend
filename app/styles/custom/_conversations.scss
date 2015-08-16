@@ -1,0 +1,24 @@
+//
+// Question List
+.create-new-converstaion {
+  .actions {
+    margin-top:10px;
+  }
+}
+
+body.question-detail {
+  .main-content-container {
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+}
+
+//
+// Question Detail
+.question-wrapper {
+  background:#efefef;
+  border-bottom:2px solid #ddd;
+  margin-top:-40px;
+  padding:80px;
+}

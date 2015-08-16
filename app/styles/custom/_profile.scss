@@ -25,3 +25,18 @@
     background:#EFEFEF;
     margin:20px 0;
 }
+
+.post-create-wrapper {
+  background:#EFEFEF;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.post-profile-wrapper {
+    background:#EFEFEF;
+    padding:10px;
+    margin-bottom:10px ;
+    .post-content {
+      display:inline-block;
+    }
+}

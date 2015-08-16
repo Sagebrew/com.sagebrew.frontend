@@ -1,0 +1,11 @@
+<div class="post-profile-wrapper" >
+  <div class="vote-wrapper">
+    <a class="vote-up {{isVotedUp}}" {{action "upvote"}}><i class="fa fa-chevron-up"></i></a>
+    <span class="vote-count">{{post.vote_count}}</span>
+    <a  class="vote-down {{isVotedDown}}" {{action "downvote"}}><i class="fa fa-chevron-down"></i></a>
+  </div>
+
+  <div class="voatable-content post-content">
+    <p>{{post.content}}</p>
+  </div>
+</div>
