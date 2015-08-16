@@ -10,10 +10,7 @@
   },
   "Ports": [
     {
-      "ContainerPort": "80"
-    },
-    {
-     "ContainerPort": "443"
+     "ContainerPort": "3000"
     }
   ],
   "Logging": "/home/apps/logs/"
