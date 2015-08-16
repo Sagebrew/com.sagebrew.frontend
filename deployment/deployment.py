@@ -65,7 +65,7 @@ def create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
                                        template_name='sys-util-conf')
     sys_env = sys_env["CreateEnvironmentResponse"]["CreateEnvironmentResult"]
     while sys_env[u"Status"] != u"Ready":
-        sleep(35)
+        sleep(30)
         sys_env = stalk.describe_environments(application_name=sys_util,
                                               environment_names=[sys_util,])
         sys_env_app = sys_env["DescribeEnvironmentsResponse"][
@@ -82,8 +82,8 @@ def create_sys_util_env(sys_util, sys_util_name, branch_key, stalk, sha_key,
 def create_app_version_update_env(branch_key, stalk, sha_key, bean_bucket,
                                   app_name, env_name):
     bean_key = "%s/%s-%s.json" % ("docker_config", sha_key, branch_key)
-    aws_env = "/home/ubuntu/%s/aws_bundle/%s-%s.zip" % ("com.sagebrew.frontend",
-                                                        sha_key, branch_key)
+    aws_env = "/home/ubuntu/%s/%s-%s.json" % ("com.sagebrew.frontend",
+                                              sha_key, branch_key)
     option_tuple = populate_options(aws_env)
     stalk.create_application_version(application_name=app_name,
                                      version_label=sha_key,
