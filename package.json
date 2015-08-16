@@ -47,6 +47,7 @@
     "ember-export-application-global": "^1.0.3",
     "ember-new-computed": "^1.0.2",
     "ember-radio-button": "^1.0.6",
+    "fb-watchman": "1.2.0",
     "phantomjs": "^1.9.18"
   }
 }
