@@ -21,11 +21,11 @@ def populate_config():
 
 
 def populate_staging_values(data):
-    data = data.replace("<AWS_ACCESS_KEY_ID>",
+    data = data.replace("<AWS_ACCESS_KEY>",
                         environ.get("AWS_ACCESS_KEY_STAGING", ""))
     data = data.replace("<AWS_SECRET_ACCESS_KEY>",
                         environ.get("AWS_SECRET_ACCESS_KEY_STAGING", ""))
-    data = data.replace("<AWS_S3_BUCKET>", environ.get("BUCKET_STAGING", ""))
+    data = data.replace("<BUCKET>", environ.get("BUCKET_STAGING", ""))
     data = data.replace("<SHA1>", environ.get("CIRCLE_SHA1", ""))
     data = data.replace("<CIRCLE_BRANCH>", environ.get("CIRCLE_BRANCH", ""))
     data = data.replace("<APP_USER>", environ.get("APP_USER", ""))
@@ -36,11 +36,11 @@ def populate_staging_values(data):
 
 
 def populate_production_values(data):
-    data = data.replace("<AWS_ACCESS_KEY_ID>",
+    data = data.replace("<AWS_ACCESS_KEY>",
                         environ.get("AWS_ACCESS_KEY_PROD", ""))
     data = data.replace("<AWS_SECRET_ACCESS_KEY>",
                         environ.get("AWS_SECRET_ACCESS_KEY_PROD", ""))
-    data = data.replace("<AWS_S3_BUCKET>", environ.get("BUCKET_PROD", ""))
+    data = data.replace("<BUCKET>", environ.get("BUCKET_PROD", ""))
     data = data.replace("<SHA1>", environ.get("CIRCLE_SHA1", ""))
     data = data.replace("<CIRCLE_BRANCH>", environ.get("CIRCLE_BRANCH", ""))
     data = data.replace("<APP_USER>", environ.get("APP_USER", ""))
