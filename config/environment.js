@@ -1,6 +1,17 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
+  var web_app = "sagebrew.local.dev",
+      domain = "sagebrew.local.dev";
+  if (environment === 'staging') {
+    web_app = 'staging.sagebrew.com';
+    domain = "staging-app.sagebrew.com";
+  }
+
+  if (environment === 'production') {
+    web_app = 'www.sagebrew.com';
+    domain = "app.sagebrew.com";
+  }
   var ENV = {
     modulePrefix: 'sandbox',
     environment: environment,
@@ -21,16 +32,16 @@ module.exports = function(environment) {
       authenticationRoute: 'users.login',
       authorizer: 'simple-auth-authorizer:oauth2-bearer',
       session: 'session:custom',
-      crossOriginWhitelist: ['https://sagebrew.local.dev']
+      crossOriginWhitelist: ['https://' + web_app, domain]
     },
     'simple-auth-oauth2': {
-      'serverTokenEndpoint': 'https://sagebrew.local.dev/o/token/'
+      'serverTokenEndpoint': 'https://' + web_app + '/o/token/'
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self'",
       'font-src': "'self' https://fonts.googleapis.com http://fonts.googleapis.com http://fonts.gstatic.com",
-      'connect-src': "'self' https://sagebrew.local.dev",
+      'connect-src': "'self' https://" + web_app,
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
       'media-src': "'self'"
