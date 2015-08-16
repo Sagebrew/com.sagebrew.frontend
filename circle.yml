@@ -22,7 +22,7 @@ test:
     - echo 1
   post:
     - sed "s/<EMAIL>/$DOCKER_EMAIL/;s/<AUTH>/$DOCKER_AUTH/" < ~/com.sagebrew.frontend/dockercfg.template > ~/.dockercfg
-    - sed "s/<BRANCH>/$CIRCLE_BRANCH/;s/<APP_USER>/$APP_USER/;s/<APP_USER>/$APP_USER/" < ~/com.sagebrew.frontend/dockerfiles/dockerfile.template > ~/com.sagebrew.frontend/dockerfiles/Dockerfile
+    - sed "s/<BRANCH>/$CIRCLE_BRANCH/;s/<BRANCH>/$CIRCLE_BRANCH/;s/<BRANCH>/$CIRCLE_BRANCH/;s/<APP_USER>/$APP_USER/;s/<APP_USER>/$APP_USER/" < ~/com.sagebrew.frontend/dockerfiles/dockerfile.template > ~/com.sagebrew.frontend/dockerfiles/Dockerfile
     - docker build -t sagebrew/sb_app:$CIRCLE_SHA1 ~/com.sagebrew.frontend/deployment/
     - docker build -t sagebrew/mass_sys:$CIRCLE_SHA1 ~/com.sagebrew.frontend/dockerfiles/
     - docker run --name redis-container -d redis

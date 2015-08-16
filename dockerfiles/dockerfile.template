@@ -1,13 +1,13 @@
-FROM sagebrew/django.web.primary.frontend:v4
+FROM sagebrew/django.web.primary.frontend:v5
 
 MAINTAINER Devon Bleibtrey <devon@sagebrew.com>
 
 RUN git clone -b <BRANCH> git@github.com:Sagebrew/com.sagebrew.frontend.git /home/apps/com.sagebrew.frontend/
 RUN chown -R <APP_USER>:<APP_USER> /home/apps/
-
+RUN npm install
+RUN bower install --config.interactive=false --allow-root
+RUN ember build --environment <BRANCH>
 
 WORKDIR /home/apps/com.sagebrew.frontend/
-CMD npm install && \
-    bower install --config.interactive=false --allow-root && \
-    npm install -g ember-cli && \
-    ember deploy --environment <BRANCH>
+
+CMD [ "ember", "deploy", "--environment", "<BRANCH>" ]
