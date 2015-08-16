@@ -4,8 +4,8 @@ import config from '../../../config/environment';
 export default Ember.Component.extend({
   actions : {
      createPost() {
-       var content = this.controller.getProperties('content');
-       console.log(config);
+       //var content = this.controller.getProperties('content');
+       //console.log(config);
         /*
        return Ember.$.ajax({
          url:  'https://sagebrew.local.dev/v1/me/',

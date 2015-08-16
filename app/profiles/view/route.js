@@ -26,7 +26,7 @@ export default Ember.Route.extend({
   model(params) {
     return Ember.RSVP.hash({
       profile: this.store.find('profile', params.username),
-      posts: this.store.find('post', {profileId: params.username}),
+      posts: this.store.query('post', {profileId: params.username}),
       president: this.getPresident(params.username),
       housereps: this.getHoseReps(params.username),
       senators: this.getSenators(params.username)

@@ -2,6 +2,7 @@ import Ember from 'ember';
 import config from '../../../config/environment';
 
 export default Ember.Component.extend({
+
   isVotedUp : Ember.computed(function() {
     if (this.get('post').get('vote_type') === true) {
       return "active";
@@ -9,6 +10,7 @@ export default Ember.Component.extend({
       return "";
     }
   }),
+
   isVotedDown : Ember.computed(function() {
     if (this.get('post').get('vote_type') === false) {
       return "active";
@@ -16,6 +18,7 @@ export default Ember.Component.extend({
       return "";
     }
   }),
+
   actions : {
     upvote() {
       var url = config.APP.API_HOST + "/" + config.APP.API_NAMESPACE;
