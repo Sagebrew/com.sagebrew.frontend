@@ -16,7 +16,6 @@ sed "s/<TAG>/$SHA1/" < ~/com.sagebrew.frontend/deployment/Dockerrun.aws.staging.
 zip -r $WEB_ZIP .
 rm $DOCKERRUN_FILE
 aws s3 cp $WEB_ZIP s3://$BUCKET_STAGING/docker_config/$WEB_ZIP
-rm $WEB_ZIP
 
 ~/virtualenvs/venv-2.7.6/bin/python ~/com.sagebrew.frontend/deployment/populate_options.py
 ~/virtualenvs/venv-2.7.6/bin/python ~/com.sagebrew.frontend/deployment/deployment.py staging
