@@ -1,6 +1,14 @@
 <div class="thread-wrapper">
-  <div class="post-profile-wrapper" >
-
+  <div class="post-profile-wrapper">
+    <div class="actions-dropdown btn-group">
+      <button type="button" class="dropdown-toggle"
+     data-toggle="dropdown"><span class="fa fa-chevron-down"></span></button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">Delete</a></li>
+        <li><a href="#">Flag</a></li>
+      </ul>
+    </div>
     {{voting/vote-on model=post type="post"}}
 
     <div class="voatable-content post-content">

@@ -39,6 +39,7 @@
 }
 
 .post-profile-wrapper {
+    position:relative;
     padding:10px;
     border-bottom:1px solid #ccc;
     .post-content {
@@ -47,16 +48,4 @@
     > .ember-view {
       display:inline-block;
     }
-}
-
-.comments-wrapper {
-
-}
-.comment-wrapper {
-  padding:8px;
-  margin-bottom:8px;
-  border-left:10px solid #ccc;
-  > .ember-view {
-    display:inline-block;
-  }
 }
