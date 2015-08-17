@@ -32,11 +32,25 @@
   margin-bottom:10px;
 }
 
+.thread-wrapper {
+  background:#EFEFEF;
+  margin-bottom:10px;
+  padding-top:10px;
+}
+
 .post-profile-wrapper {
-    background:#EFEFEF;
     padding:10px;
-    margin-bottom:10px ;
+    border-bottom:1px solid #ccc;
     .post-content {
       display:inline-block;
     }
+}
+
+.comments-wrapper {
+
+}
+.comment-wrapper {
+  padding:8px;
+  margin-bottom:8px;
+  border-left:10px solid #ccc;
 }
