@@ -37,3 +37,4 @@ deployment:
     branch: staging
     commands:
       - bash -x ~/com.sagebrew.frontend/deployment/staging.sh $CIRCLE_SHA1
+
