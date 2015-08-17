@@ -8,6 +8,7 @@ WORKDIR /home/apps/com.sagebrew.frontend/
 
 RUN npm install
 RUN bower install --config.interactive=false --allow-root
-RUN ember build --environment <BRANCH>
+RUN ember build --environment <ENVIRONMENT>
 
-CMD [ "ember", "deploy", "--environment", "<BRANCH>" ]
+CMD ember deploy --environment <ENVIRONMENT> && \
+    supervisord -c /etc/supervisor/supervisord.conf --nodaemon
