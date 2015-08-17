@@ -29,12 +29,20 @@ app.use(function* () {
     indexkey = yield dbCo.get(process.env.APP_NAME +':current');
   }
   var index = yield dbCo.get(indexkey);
-
-  if (index) {
-    this.body = index;
+  if (request.url.indexOf("robots.txt") > -1){
+      if(process.env.CIRCLE_BRANCH === "master"){
+        this.body = "User-agent: *\nDisallow: /";
+      } else {
+        this.body = "User-agent: *\nDisallow: /";
+      }
   } else {
-    this.status = 404;
+    if (index) {
+      this.body = index;
+    } else {
+      this.status = 404;
+    }
   }
+
 });
 
 app.listen(process.env.PORT || 3000);
