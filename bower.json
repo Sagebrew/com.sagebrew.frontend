@@ -15,7 +15,9 @@
     "bootstrap-sass": "~3.3.5",
     "font-awesome": "~4.3.0",
     "ember-simple-auth": "0.8.0",
-    "uri-templates": "~0.1.5"
+    "uri-templates": "~0.1.5",
+    "moment": ">= 2.8.0",
+    "moment-timezone": ">= 0.1.0"
   },
   "resolutions": {
     "jquery": ">= 1.7.0 < 2.2.0"
