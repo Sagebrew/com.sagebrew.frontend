@@ -1,4 +1,5 @@
 import OAuth2 from 'simple-auth-oauth2/authenticators/oauth2';
+import config from '../config/environment';
 
 var CustomAuthenticator = OAuth2.extend({
 	user: null,
@@ -51,9 +52,8 @@ var CustomAuthenticator = OAuth2.extend({
 		//console.log('makeRequest URL: ' + url);
 		//console.log('makeRequest DATA: ' + JSON.stringify(data));
 
-    data.client_id = 'IjA4ZDVhODBhLWMwNDYtMTFlNC1iM2I5LTA4MDAyNzI0MjM5NSI1YS9BvnRaztbwNA9RAIAlNj4IfPASdVuc';
-    data.client_secret = 'IjBjNWY1ZDBlLWMwNDYtMTFlNC1iM2I5LTA4MDAyNzI0MjM5NSI1YS9C142ReA7DG3JKEv8sy9mwGDH8ZqQIjBjNWZmNDNhLWMwNDYtMTFlNC1iM2I5LTA4MDAyNzI0MjM5NSI1YS9C1H7Jgwh13LzuYf7TGUA3mKHSsDVo';
-
+    data.client_id = config.APP.CLIENT_ID;
+    data.client_secret = config.APP.CLIENT_SECRET;
 		return this._super(url, data);
 	}
 

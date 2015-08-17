@@ -32,6 +32,9 @@ def populate_staging_values(data):
     data = data.replace("<REDIS_HOST>", environ.get("REDIS_STAGING", ""))
     data = data.replace("<REDIS_PORT>", environ.get("REDIS_PORT", ""))
     data = data.replace("<APP_NAME>", environ.get("APP_NAME", ""))
+    data = data.replace("<CLIENT_ID>", environ.get("CLIENT_ID_STAGING", ""))
+    data = data.replace("<CLIENT_SECRET>",
+                        environ.get("CLIENT_SECRET_STAGING", ""))
     return data
 
 
@@ -47,6 +50,9 @@ def populate_production_values(data):
     data = data.replace("<REDIS_HOST>", environ.get("REDIS_PROD", ""))
     data = data.replace("<REDIS_PORT>", environ.get("REDIS_PORT_PROD", ""))
     data = data.replace("<APP_NAME>", environ.get("APP_NAME", ""))
+    data = data.replace("<CLIENT_ID>", environ.get("CLIENT_ID_PROD", ""))
+    data = data.replace("<CLIENT_SECRET>",
+                        environ.get("CLIENT_SECRET_PROD", ""))
     return data
 
 if __name__ == "__main__":
