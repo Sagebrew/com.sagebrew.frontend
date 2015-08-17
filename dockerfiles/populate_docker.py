@@ -15,10 +15,13 @@ def populate_config():
 
 def populate_values(data):
     environment_set = environ.get("CIRCLE_BRANCH", "")
+    branch = environ.get('CIRCLE_BRANCH', "")
     if environment_set != "staging" and environment_set != "master":
         environment_set = "development"
+    if "/" in branch or "pull" in branch:
+        branch = "staging"
     data = data.replace("<ENVIRONMENT>", environment_set)
-    data = data.replace("<BRANCH>", environ.get('CIRCLE_BRANCH', ""))
+    data = data.replace("<BRANCH>", branch)
     data = data.replace("<APP_USER>", environ.get("APP_USER", ""))
     data = data.replace("<BUCKET>", environ.get("BUCKET_STAGING", ""))
     return data
