@@ -56,6 +56,9 @@ module.exports = function(environment) {
      //ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.API_HOST = 'https://sagebrew.local.dev';
     ENV.APP.API_NAMESPACE = 'v1';
+    ENV.APP.CLIENT_ID = "IjA4ZDVhODBhLWMwNDYtMTFlNC1iM2I5LTA4MDAyNzI0MjM5NSI1YS9BvnRaztbwNA9RAIAlNj4IfPASdVuc";
+    ENV.APP.CLIENT_SECRET = "IjBjNWY1ZDBlLWMwNDYtMTFlNC1iM2I5LTA4MDAyNzI0MjM5NSI1YS9C142ReA7DG3JKEv8sy9mwGDH8ZqQIjBjNWZmNDNhLWMwNDYtMTFlNC1iM2I5LTA4MDAyNzI0MjM5NSI1YS9C1H7Jgwh13LzuYf7TGUA3mKHSsDVo";
+
   }
 
   if (environment === 'test') {
@@ -73,11 +76,15 @@ module.exports = function(environment) {
   if (environment === 'staging') {
     ENV.APP.API_HOST = 'https://staging.sagebrew.com';
     ENV.APP.API_NAMESPACE = 'v1';
+    ENV.APP.CLIENT_ID = process.env['CLIENT_ID'];
+    ENV.APP.CLIENT_SECRET = process.env['CLIENT_SECRET'];
   }
 
   if (environment === 'production') {
     ENV.APP.API_HOST = 'https://www.sagebrew.com';
     ENV.APP.API_NAMESPACE = 'v1';
+    ENV.APP.CLIENT_ID = process.env['CLIENT_ID'];
+    ENV.APP.CLIENT_SECRET = process.env['CLIENT_SECRET'];
   }
 
   return ENV;
