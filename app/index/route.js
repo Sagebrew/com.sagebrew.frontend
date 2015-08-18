@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Ember.Route.extend({
   beforeModel () {
@@ -9,7 +10,7 @@ export default Ember.Route.extend({
   },
   getNews() {
     return Ember.$.ajax({
-      url:  'https://sagebrew.local.dev/v1/me/newsfeed/',
+      url:  config.APP.API_HOST + '/v1/me/newsfeed/',
       type: 'GET'
     });
   },
