@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Ember.Route.extend({
   beforeModel() {
@@ -10,13 +11,13 @@ export default Ember.Route.extend({
   actions: {
     sessionAuthenticationSucceeded() {
       this._populateCurrentUser().then(user => this.transitionTo('base.index'));
-    },
+    }
   },
 
   _populateCurrentUser() {
     var _this = this;
     return Ember.$.ajax({
-      url:  'https://sagebrew.local.dev/v1/me/',
+      url:  config.APP.API_HOST + '/v1/me/',
       type: 'GET'
     }).then(function(response) {
         console.log(response);
