@@ -76,8 +76,8 @@ module.exports = function(environment) {
   if (environment === 'staging') {
     ENV.APP.API_HOST = 'https://staging.sagebrew.com';
     ENV.APP.API_NAMESPACE = 'v1';
-    ENV.APP.CLIENT_ID = process.env['CLIENT_ID'];
-    ENV.APP.CLIENT_SECRET = process.env['CLIENT_SECRET'];
+    ENV.APP.CLIENT_ID = "o68TduU8HxWPNU68J9r9R1J0DT4lfeJg0plmGyMz";
+    ENV.APP.CLIENT_SECRET = "mVMeqzS2ILXDmjhGmqPyighuxUWSS4MY24MO0vnp1su0po6iRBVrBtLNiGrCMgBv8Wp8qVe1fwq7PkZjN1ciNDhOcdHUDMXaIpu6zwKR7cVPeFc9fgPZj3FQwK4Yd0Qp";
   }
 
   if (environment === 'production') {
