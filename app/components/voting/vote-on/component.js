@@ -2,7 +2,7 @@ import Ember from 'ember';
 import config from '../../../config/environment';
 
 export default Ember.Component.extend({
-    isVotedUp : Ember.computed(function() {
+    isVotedUp : Ember.computed('vote_type', function() {
       if (this.get('model').get('vote_type') === true) {
         return "active";
       } else {
@@ -10,7 +10,7 @@ export default Ember.Component.extend({
       }
     }),
 
-    isVotedDown : Ember.computed(function() {
+    isVotedDown : Ember.computed('vote_type', function() {
       if (this.get('model').get('vote_type') === false) {
         return "active";
       } else {
@@ -28,6 +28,8 @@ export default Ember.Component.extend({
                   'vote_type': true
                 },
         });
+        var model = this.get('model');
+        model.reload();
       },
       downvote() {
         var url = config.APP.API_HOST + "/" + config.APP.API_NAMESPACE;
@@ -38,7 +40,8 @@ export default Ember.Component.extend({
                   'vote_type': false
                 },
         });
-
+        var model = this.get('model');
+        model.reload();
       }
     }
 });

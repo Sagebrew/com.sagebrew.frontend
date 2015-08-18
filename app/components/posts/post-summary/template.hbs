@@ -10,14 +10,17 @@
       </ul>
     </div>
     {{voting/vote-on model=post type="post"}}
-
     <div class="voatable-content post-content">
       <p>{{post.content}}</p>
     </div>
+    <div class="post-actions">
+      <a {{action "toggleCommentAdd" on="click"}}>Add Comment</a>
+    </div>
   </div>
   <div class="comments-wrapper">
-    {{#each post.comments as |comment|}}
-      {{comments/comment-summary comment=comment}}
-    {{/each}}
+    {{#if isAddingComment}}
+      {{comments/comment-create parent=parent}}
+    {{/if}}
+  {{comments/comment-list comments=post.comments parent=post}}
   </div>
 </div>

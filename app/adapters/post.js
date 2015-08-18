@@ -8,7 +8,14 @@ export default DRFAdapter.extend(UrlTemplates, {
   createRecordUrlTemplate: '{+host}/v1/posts/{profileId}/wall/',
   urlSegments: {
     profileId(type, id, snapshot, query) {
-      return query.profileId;
+      console.log(snapshot);
+      if (query && query.profileId) {
+        return query.profileId;
+      } else {
+        return snapshot.belongsTo('profile', { id: true });
+      }
+
+
 //      return snapshot.belongsTo('post', { id: true });
     },
   }
