@@ -40,10 +40,10 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self'",
-      'font-src': "'self' https://fonts.googleapis.com http://fonts.googleapis.com http://fonts.gstatic.com",
+      'font-src': "'self' https://fonts.googleapis.com http://fonts.googleapis.com http://fonts.gstatic.com https://fonts.gstatic.com",
       'connect-src': "'self' https://" + web_app,
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com",
       'media-src': "'self'"
       }
   };
