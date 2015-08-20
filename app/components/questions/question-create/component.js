@@ -4,14 +4,16 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
   actions : {
     save() {
-      var store = this.get('store')
+      var self = this;
       var data = this.controller.getProperties('title', 'content', 'tags');
-      var question = store.createRecord('question', {
+      var question = this.get('store').createRecord('question', {
         title: data.title,
         content: data.content,
         tags: data.tags,
       });
-      question.save();
+      question.save().then(function(){
+        self.sendAction('goToQuestion', question);
+      });
     }
   }
 });

@@ -24,13 +24,8 @@ export default Ember.Route.extend({
           return _this.container.lookup('service:store').find('user', response.username).then(user => _this.get('currentUser').set('content', user) && user);
         });
 
-    }, function(xhr, status, error) {
-      Ember.run(function() {
-        reject(xhr.responseText);
-      });
+    }, function(xhr) {
+
     });
-  //  const { user_id, user_type } = this.get('session.secure');
-//    return this.store.find(user_type, user_id)
-    //  .then(user => this.get('currentUser').set('content', user) && user);
   }
 });
