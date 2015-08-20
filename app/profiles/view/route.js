@@ -30,6 +30,8 @@ export default Ember.Route.extend({
       president: this.getPresident(params.username),
       housereps: this.getHoseReps(params.username),
       senators: this.getSenators(params.username)
+//      comments:  this.store.query('comment', {parentResourceId:'dafe5c12-4081-11e5-a820-080027880ca6', parentResourceType: "post"}),
+
     });
   }
 });

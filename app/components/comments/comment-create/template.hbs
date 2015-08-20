@@ -1,0 +1,10 @@
+<div class="comment-create-wrapper">
+  <form {{action 'createComment' on='submit'}}>
+    <div class="form-group">
+      {{textarea value=commentConent id="commentContent" type="text" class="form-control validate" }}
+    </div>
+    <div class="clearfix">
+      <button type="submit" class="btn btn-primary pull-right">Add</button>
+    </div>
+  </form>
+</div>

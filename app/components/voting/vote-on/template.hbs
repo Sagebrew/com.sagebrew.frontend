@@ -1,0 +1,5 @@
+<div class="vote-wrapper">
+  <a class="vote-up {{if model.didVoteUp 'active' ''}}" {{action "upvote"}}><i class="fa fa-chevron-up"></i></a>
+  <span class="vote-count">{{model.vote_count}}</span>
+  <a  class="vote-down {{if model.didVoteDown 'active' ''}}" {{action "downvote"}}><i class="fa fa-chevron-down"></i></a>
+</div>

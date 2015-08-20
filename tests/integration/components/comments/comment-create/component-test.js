@@ -1,8 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-
-moduleForComponent('profiles/rep-sidebar', 'Integration | Component | profiles/rep sidebar', {
+moduleForComponent('comments/comment-create', 'Integration | Component | comments/comment create', {
   integration: true
 });
 
@@ -12,15 +11,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{profiles/rep-sidebar}}`);
+  this.render(hbs`{{comments/comment-create}}`);
 
-  assert.equal(this.$().text(), '');
+  assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#profiles/rep-sidebar}}
+    {{#comments/comment-create}}
       template block text
-    {{/profiles/rep-sidebar}}
+    {{/comments/comment-create}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
