@@ -1,6 +1,6 @@
 .profile-highlight {
   height:240px;
-  background:#EFEFEF;
+  background:$primary-thing-bg;
   position: relative;
   .profile-pic-wrapper {
     position: absolute;
@@ -9,7 +9,7 @@
     height:120px;
     width:120px;
     border:2px solid #fff;
-    background:#e2e2e2;
+    background:$primary-thing-bg;
   }
   .profile-full-name {
     position: absolute;
@@ -22,18 +22,18 @@
 }
 
 .profile-nav {
-    background:#EFEFEF;
+    background:$primary-thing-bg;
     margin:20px 0;
 }
 
 .post-create-wrapper {
-  background:#EFEFEF;
+  background:$primary-thing-bg;
   padding:10px;
   margin-bottom:10px;
 }
 
 .thread-wrapper {
-  background:#EFEFEF;
+  background:$primary-thing-bg;
   margin-bottom:10px;
   padding-top:10px;
 }
