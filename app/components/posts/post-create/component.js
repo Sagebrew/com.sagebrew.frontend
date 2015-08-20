@@ -2,9 +2,11 @@ import Ember from 'ember';
 import config from '../../../config/environment';
 
 export default Ember.Component.extend({
+  store: Ember.inject.service(),
   actions : {
      createPost() {
-       //var content = this.controller.getProperties('content');
+       var store = this.get('store');
+       var content = this.controller.getProperties('content');
        //console.log(config);
         /*
        return Ember.$.ajax({
@@ -22,13 +24,11 @@ export default Ember.Component.extend({
          });
        });
        */
-       /*
-       var post = this.store.createRecord('post', {
-         content: data.content,
-         profile: this.get('currentUser').username
+       var post = store.createRecord('post', {
+         content: content.content,
+         profile: this.get('profile')
        });
        post.save();
-       */
      }
    }
 });

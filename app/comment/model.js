@@ -5,4 +5,7 @@ export default voteableModel.extend({
   created: DS.attr('date'),
   last_edited_on: DS.attr('date'),
   profile: DS.belongsTo('profile'),
+  parent_type: DS.attr(), //These don't really exist in the backend but giving this a shot.
+  parent_id: DS.attr(), //These don't really exist in the backend but giving this a shot.
+
 });

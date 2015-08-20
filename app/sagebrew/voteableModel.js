@@ -2,6 +2,7 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  type: DS.attr(),
   upvotes: DS.attr(),
   downvotes: DS.attr(),
   vote_count: DS.attr(),

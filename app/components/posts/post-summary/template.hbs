@@ -19,7 +19,7 @@
   </div>
   <div class="comments-wrapper">
     {{#if isAddingComment}}
-      {{comments/comment-create parent=parent}}
+      {{comments/comment-create parent=post}}
     {{/if}}
   {{comments/comment-list comments=post.comments parent=post}}
   </div>
