@@ -8,6 +8,7 @@ export default Ember.Component.extend({
        var data = this.controller.getProperties('content');
        var solution = store.createRecord('solution', {
          content: data.content,
+         question_id: this.get('question').id
        });
        solution.save();
      }

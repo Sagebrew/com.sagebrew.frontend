@@ -12,14 +12,14 @@ export default DRFAdapter.extend(UrlTemplates, {
       if (query && query.parentResourceType) {
         return query.parentResourceType;
       } else {
-        return snapshot.get('parent_type');
+        return snapshot.attr('parent_type');
       }
     },
     parentResourceId(type, id, snapshot, query) {
       if (query && query.parentResourceId) {
         return query.parentResourceId;
       } else {
-        return snapshot.get('parent_id');
+        return snapshot.attr('parent_id');
       }
     },
   }

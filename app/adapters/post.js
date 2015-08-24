@@ -13,7 +13,6 @@ export default DRFAdapter.extend(UrlTemplates, {
       } else {
         return snapshot.belongsTo('profile', { id: true });
       }
-//      return snapshot.belongsTo('post', { id: true });
     },
   }
 });
