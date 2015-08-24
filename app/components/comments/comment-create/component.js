@@ -10,7 +10,7 @@ export default Ember.Component.extend({
          content: content.commentConent,
          parent_id: this.get('parent').id,
          parent_type: this.get('parent').get('type'),
-         profile: this.get('currentUser').id
+         profile: this.currentUser.content.id
        });
        comment.save();
      }

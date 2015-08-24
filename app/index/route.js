@@ -1,11 +1,27 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Ember.Route.extend({
-  beforeModel () {
-    var session = this.get('session');
-    if (!session.isAuthenticated) {
-      this.transitionTo('users');
-    }
+  getPresident(username) {
+    var url = config.APP.API_HOST + '/' + config.APP.API_NAMESPACE;
+    return Ember.$.ajax({
+      url:  url + '/profiles/' + username + '/president/',
+      type: 'GET',
+    });
+  },
+  getHoseReps(username) {
+    var url = config.APP.API_HOST + '/' + config.APP.API_NAMESPACE;
+    return Ember.$.ajax({
+      url:  url + '/profiles/' + username + '/house_representative/',
+      type: 'GET',
+    });
+  },
+  getSenators(username) {
+    var url = config.APP.API_HOST + '/' + config.APP.API_NAMESPACE;
+    return Ember.$.ajax({
+      url:  url + '/profiles/' + username + '/senators/',
+      type: 'GET',
+    });
   },
   getNews() {
     return Ember.$.ajax({
@@ -15,7 +31,11 @@ export default Ember.Route.extend({
   },
   model () {
     return Ember.RSVP.hash({
-      news:     this.getNews()
+      profile: this.currentUser.get("content").get('profile'),
+      news:     this.getNews(),
+      president: this.getPresident(this.currentUser.get("content").id),
+      houserep: this.getHoseReps(this.currentUser.get("content").id),
+      senators: this.getSenators(this.currentUser.get("content").id)
     });
   }
 });

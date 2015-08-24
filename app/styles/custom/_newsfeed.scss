@@ -9,3 +9,29 @@
 
   }
 }
+
+.block-wrapper {
+  background:$primary-thing-bg;
+  h4.block-title {
+    padding:4px;
+    border-bottom:1px solid #b1b1b1;
+    margin:0 4px;
+  }
+  .block-content {
+    padding:4px;
+  }
+}
+
+.rep-wrapper {
+  vertical-align: top;
+  .rep-thumbnail {
+    display:inline-block;
+    width:80px;
+
+  }
+  .rep-content {
+    vertical-align: top;
+    display:inline-block;
+  }
+  margin-bottom:10px;
+}

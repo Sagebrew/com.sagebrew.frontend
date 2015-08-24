@@ -1,6 +1,8 @@
 <div class="row">
-  <div class="col-md-9">
-    <h4>News</h4>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    {{posts/post-create profile=model.profile}}
     {{#each model.news.results as |result|}}
       <div class="news-item">
         <h4>{{result.title}}</h4>
@@ -10,6 +12,40 @@
     {{/each}}
   </div>
   <div class="col-md-3">
-    <h4>Sidebar</h4>
+    <div class="block-wrapper">
+      <h4 class="block-title">Who Represents Me?</h4>
+      <div class="block-content">
+        <h5>President</h5>
+        <div class="rep-wrapper">
+          <img class="rep-thumbnail" src="/assets/placeholder.jpeg" />
+          <div class="rep-content">
+            <strong>{{model.president.full_name}}</strong>
+          </div>
+        </div>
+
+        <h5>Senators</h5>
+        <div class="rep-wrapper">
+          <img class="rep-thumbnail" src="/assets/placeholder.jpeg" />
+          <div class="rep-content">
+            <strong>{{model.senators.0.full_name}}</strong>
+          </div>
+        </div>
+        <div class="rep-wrapper">
+          <img class="rep-thumbnail" src="/assets/placeholder.jpeg" />
+          <div class="rep-content">
+            <strong>{{model.senators.1.full_name}}</strong>
+          </div>
+        </div>
+        <h5>House Representative</h5>
+        <div class="rep-wrapper">
+          <img class="rep-thumbnail" src="/assets/placeholder.jpeg" />
+          <div class="rep-content">
+            <strong>{{model.houserep.full_name}}</strong>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </div>
