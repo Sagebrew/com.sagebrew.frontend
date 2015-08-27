@@ -7,9 +7,10 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.controller.set('errorMessage', message.error_description);
     },
     sessionAuthenticationSucceeded: function() {
+      console.log("HELLO");
+      this._super();
       this.controller.setProperties({errorMessage : '', identification : '', password : ''});
       this.transitionTo('index');
-      this._super();
     },
     authenticate: function() {
       var data = this.controller.getProperties('identification', 'password');

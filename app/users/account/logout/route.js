@@ -8,9 +8,13 @@ export default Ember.Route.extend({
     }
   },
   actions : {
-  logout: function() {
-    this.get('session').invalidate('authenticator:custom');
-    this.transitionTo('users');
-   }
- }
+    sessionInvalidationSucceeded() {
+      this._super();
+      this.transitionTo('users');
+    },
+    logout() {
+      this.get('session').invalidate('authenticator:custom');
+      this.transitionTo('users');
+    }
+  }
 });

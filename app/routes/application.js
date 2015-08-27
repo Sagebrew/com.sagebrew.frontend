@@ -9,6 +9,7 @@ export default Ember.Route.extend({
 
   actions: {
     sessionAuthenticationSucceeded() {
+      console.log("SUP");
       this._populateCurrentUser().then(user => this.transitionTo('base.index'));
     },
   },

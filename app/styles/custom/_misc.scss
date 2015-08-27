@@ -3,23 +3,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.search-form {
-  .form-group {
-    position: relative;
-  }
-  .form-group input {
-    width:100%;
-    padding-right: 30px;
-  }
-  .form-group button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: none;
-    border: 0;
-    padding: 7px 10px 7px 5px;
-  }
-}
+
 
 //
 // Voting
