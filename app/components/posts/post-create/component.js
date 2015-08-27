@@ -11,6 +11,8 @@ export default Ember.Component.extend({
          profile: this.get('profile')
        });
        post.save();
-     }
+       this.controller.setProperties({content: ''});
+       this.sendAction('refreshPosts');
+      }
    }
 });

@@ -6,5 +6,13 @@ export default Ember.Route.extend({
       profile: this.store.find('profile', params.username),
       posts: this.store.query('post', {profileId: params.username}),
     });
+  },
+  refreshPosts() {
+    console.log("YEAH");
+  },
+  actions : {
+    refreshPosts() {
+      console.log("YEAH");
+    }
   }
 });

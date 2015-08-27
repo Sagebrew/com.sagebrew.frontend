@@ -15,6 +15,11 @@ Router.map(function() {
     });
     this.route('profiles',  { resetNamespace: true }, function() {
       this.route('view', { path: '/profile/:username' });
+      this.route('edit', function() {
+        this.route('general');
+        this.route('donate');
+        this.route('interests');
+      });
     });
   });
 
